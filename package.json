@@ -1,0 +1,24 @@
+{
+  "name": "fmharrismatrix",
+  "private": false,
+  "version": "0.2.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "hmcomponent": "file:../hmcomponent",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/html-minifier-terser": "^7.0.2",
+    "sass": "^1.71.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.5",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-singlefile": "^2.0.1"
+  }
+}

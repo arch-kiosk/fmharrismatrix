@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+    <script type="module" src="/src/app.js"></script>
+    <style>
+        header {
+            background: lightgrey;
+            padding: 0.5em;
+            margin-bottom: 2em;
+        }
+
+        body {
+            height: 100vh;
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="error-div"></div>
+<hm-component autozoom="zoomtofit" id="hmcomponent"></hm-component>
+</body>
+
+<% if ( VITE_MODE == "DEVELOPMENT") { %>
+<script>
+    function getFA12() {
+       let loci = [
+                {
+                "alternate_id": "",
+                "arch_context": "FA-021",
+                "created": "2019-01-07 09:10:33",
+                "description": "",
+                "modified": "2019-01-15 12:24:46",
+                "modified_by": "Prof. B’s iPad",
+                "tags": "",
+                "type": "dp",
+                "uid": "142bb393-0c93-4940-baa4-3dfc312972ec"
+            }, {
+                "alternate_id": "",
+                "arch_context": "FA-040",
+                "created": "2019-01-15 10:06:40",
+                "description": "",
+                "modified": "2024-02-19 11:04:29",
+                "modified_by": "LDB",
+                "tags": "",
+                "type": "dp",
+                "uid": "a942a1bb-df2b-4054-87bb-047deb44d0b7"
+            }, {
+                "alternate_id": "",
+                "arch_context": "FA-041",
+                "created": "2019-01-15 10:10:32",
+                "description": "",
+                "modified": "2024-02-19 11:03:34",
+                "modified_by": "LDB",
+                "tags": "",
+                "type": "ac",
+                "uid": "eb9e8ec3-c176-492b-9d07-f97ca8d60656"
+            }]
+       let relations = [{
+                "arch_context": "FA-021",
+                "chronology": "later than",
+                "created": "2020-07-05 18:15:33",
+                "id": "204b993c-2075-4359-8162-22c5df55c12e",
+                "modified": "2020-07-05 18:15:33.657",
+                "modified_by": "sys",
+                "related_arch_context": "FA-040",
+                "relation_type": "seals",
+                "sketch_description": "",
+                "uid_locus": "142bb393-0c93-4940-baa4-3dfc312972ec",
+                "uid_locus_related": "a942a1bb-df2b-4054-87bb-047deb44d0b7",
+                "uid_sketch": ""
+            }, {
+                "arch_context": "FA-021",
+                "chronology": "later than",
+                "created": "2023-11-25 08:29:37",
+                "id": "c4956111-38c0-49cb-b610-e780ad6dd046",
+                "modified": "2023-11-25 08:29:37",
+                "modified_by": "LDB",
+                "related_arch_context": "FA-041",
+                "relation_type": "above",
+                "sketch_description": "",
+                "uid_locus": "142bb393-0c93-4940-baa4-3dfc312972ec",
+                "uid_locus_related": "eb9e8ec3-c176-492b-9d07-f97ca8d60656",
+                "uid_sketch": ""
+            }, {
+                "arch_context": "FA-041",
+                "chronology": "earlier than",
+                "created": "2023-11-25 08:29:28",
+                "id": "06a70036-f88e-48d2-89f1-810186c565ab",
+                "modified": "2023-11-25 08:29:37",
+                "modified_by": "LDB",
+                "related_arch_context": "FA-021",
+                "relation_type": "below",
+                "sketch_description": "",
+                "uid_locus": "eb9e8ec3-c176-492b-9d07-f97ca8d60656",
+                "uid_locus_related": "142bb393-0c93-4940-baa4-3dfc312972ec",
+                "uid_sketch": ""
+            },]
+      return JSON.stringify({
+        relations: relations,
+        loci: loci
+      })
+
+    }
+
+    function getData() {
+        const relations = [
+            {
+                "id": "0",
+                "uid_locus": "6ef71479-a75b-4c5d-8517-c2893a9b8b37",
+                "arch_context": "Context #1",
+                "uid_locus_related": "5bc66eb9-bc85-db43-967a-643ecf7a05ac",
+                "related_arch_context": "Context #2",
+                "relation_type": "below",
+                "chronology": "earlier",
+                "uid_sketch": null,
+                "sketch_description": null,
+                "created": "2022-05-24T11:59:56",
+                "modified": "2022-05-24T12:00:09",
+                "modified_by": "lkh"
+            },
+            {
+                "id": "1",
+                "uid_locus": "5bc66eb9-bc85-db43-967a-643ecf7a05ac",
+                "arch_context": "Context #2",
+                "uid_locus_related": "6ef71479-a75b-4c5d-8517-c2893a9b8b37",
+                "related_arch_context": "Context #1",
+                "relation_type": "above",
+                "chronology": "later",
+                "uid_sketch": null,
+                "sketch_description": null,
+                "created": "2022-05-24T11:59:56",
+                "modified": "2022-05-24T12:00:09",
+                "modified_by": "lkh"
+            }
+        ]
+
+        const loci = [
+            {
+                "uid": "6ef71479-a75b-4c5d-8517-c2893a9b8b37",
+                "arch_context": "Context #1",
+                "alternate_id": null,
+                "description": "Concentration of a lot of fragments of amphorae that appear in the west part of the Space 1, embedded in a hard soil with a lot of plaster fragments. Most of the ceramic fragments are in a horizontal position. It was covered by 043. \r\rThis small area was excavated because of the end of the campaign; work in room 1 was resumed in 2022, and the rest of the same deposit was excavated as 062",
+                "type": "dp",
+                "tags": null,
+                "created": "2022-05-24T12:42:06",
+                "modified": "2022-07-06T04:01:17",
+                "modified_by": "lkh"
+            },
+            {
+                "uid": "5bc66eb9-bc85-db43-967a-643ecf7a05ac",
+                "arch_context": "Context #2",
+                "alternate_id": null,
+                "description": "This is Context #2",
+                "type": "dp",
+                "tags": null,
+                "created": "2022-05-24T12:42:06",
+                "modified": "2022-07-06T04:01:17",
+                "modified_by": "lkh"
+            },
+
+        ]
+
+        return JSON.stringify({
+            relations: relations,
+            loci: loci
+        })
+    }
+
+    window.addEventListener("load", () => {
+        loadHarrisMatrix(getFA12())
+    })
+</script>
+<% } %>
+
+<!--suppress JSUnresolvedLibraryURL -->
+</html>
